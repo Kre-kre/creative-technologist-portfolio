@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<meta name="description" content="Gargi Tripathi — Independent Creative Practice. Strategy, design, technology and writing.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 fill=%27%231B232B%27/%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2712%27 fill=%27%23D2E9FF%27/%3E%3C/svg%3E">
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gargi Tripathi — Independent Creative Practice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+  <style>
+    html{scroll-behavior:smooth}
+    html,body{margin:0;background:#1B232B;color:#E2F0FD}
+    *{box-sizing:border-box}
+    a{color:inherit;text-decoration:none}
+    a:hover{opacity:0.75}
+    ::selection{background:#D2E9FF;color:#1B232B}
+    button,textarea,input{font:inherit;color:inherit}
+    textarea::placeholder,input::placeholder{color:inherit;opacity:0.5}
+  </style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="position:relative;overflow-x:clip;color:var(--ink-now,#E2F0FD);font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased">
+
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:var(--bg-now,#1B232B)">
+    <div style="position:absolute;inset:0;background:var(--glow, radial-gradient(110% 80% at 78% 6%, rgba(106,14,29,0.9) 0%, rgba(43,7,13,0.55) 38%, transparent 74%));opacity:var(--glow-op,1)"></div>
+      <div style="position:absolute;inset:0;overflow:hidden;opacity:var(--silk-op,1)">
+        <div data-silk="a" style="position:absolute;inset:-25%;background:var(--silkA, radial-gradient(42% 60% at 30% 40%, rgba(122,20,36,0.8), transparent 70%), radial-gradient(36% 52% at 72% 58%, rgba(224,68,92,0.38), transparent 70%), radial-gradient(50% 42% at 50% 95%, rgba(43,7,13,1), transparent 70%));filter:blur(60px) saturate(1.15);opacity:0.9;will-change:transform"></div>
+        <div data-silk="b" style="position:absolute;inset:-25%;background:var(--silkB, radial-gradient(30% 44% at 60% 30%, rgba(224,68,92,0.4), transparent 70%), radial-gradient(44% 36% at 25% 80%, rgba(122,20,36,0.8), transparent 70%));filter:blur(70px);opacity:0.72;mix-blend-mode:var(--blend-now,screen);will-change:transform"></div>
+      </div>
+      <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background-image:url('./assets/grain-tile.png');background-size:320px 320px;opacity:var(--field,0.6);mix-blend-mode:var(--blend-now,screen);-webkit-mask-image:linear-gradient(200deg,#000 10%,transparent 80%);mask-image:linear-gradient(200deg,#000 10%,transparent 80%)"></div>
+      <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;opacity:var(--grain,0.3);mix-blend-mode:overlay;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27260%27%20height%3D%27260%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.9%27%20numOctaves%3D%272%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20values%3D%270%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%201%200%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url%28%2523n%29%27%2F%3E%3C%2Fsvg%3E')"></div>
+    <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+  </div>
+
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px clamp(14px,4vw,48px);color:#FFFFFF;mix-blend-mode:difference;pointer-events:none">
+    <a href="#top" style="pointer-events:auto;display:flex;flex-direction:column;gap:4px">
+      <span style="font-size:14px;font-weight:600;letter-spacing:0.16em">GARGI TRIPATHI</span>
+      <span style="font-size:12px;letter-spacing:0.02em;opacity:0.7">Independent Creative Practice</span>
+    </a>
+    <div style="pointer-events:auto;display:flex;gap:clamp(6px,2vw,24px);font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:0.08em">
+      <a href="#work" style="padding:14px 6px">WORK</a>
+      <a href="#about" style="padding:14px 6px">ABOUT</a>
+      <a href="#contact" style="padding:14px 6px">CONTACT</a>
+    </div>
+  </nav>
+
+  <header id="top" data-tone="b" ref="{{ wrapRef }}" data-screen-label="Hero + Work" style="position:relative;height:200vh">
+    <div id="work" ref="{{ heroRef }}" style="position:sticky;top:0;height:100vh;min-height:560px;overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none">
+
+      <div style="position:absolute;inset:0;z-index:2;pointer-events:none;display:flex;flex-direction:column;justify-content:space-between;padding:110px clamp(20px,4vw,48px) clamp(24px,4vh,40px)">
+        <div style="display:flex;justify-content:flex-end">
+          <button data-nodrag="" onClick="{{ replay }}" style="pointer-events:auto;background:transparent;border:1px solid color-mix(in srgb, currentColor 22%, transparent);padding:13px 16px;cursor:pointer;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em" style-hover="border-color: currentColor">↺ REPLAY</button>
+        </div>
+        <div ref="{{ heroTextRef }}" style="display:flex;flex-direction:column;gap:clamp(20px,3vh,32px);will-change:opacity,transform">
+          <h1 ref="{{ titleRef }}" style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(34px,min(9.4vw,15vh),164px);line-height:0.9;letter-spacing:-0.01em;text-transform:uppercase">
+            <span data-w="" style="display:inline-block;opacity:0">Synthesizing</span><br>
+            <span data-w="" style="display:inline-block;opacity:0;font-style:italic;font-weight:400;text-transform:none;margin-right:0.2em">the</span><span data-w="" style="display:inline-block;opacity:0">Intangible</span>
+          </h1>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px 40px;flex-wrap:wrap">
+            <p data-fade="" style="opacity:0;margin:0;max-width:460px;font-size:clamp(17px,1.4vw,19px);line-height:1.55;color:var(--b-mut,#CDB7B2);text-wrap:pretty">Ideas, instincts, information and imagination — distilled into experiences, identities and digital artifacts.</p>
+            <div data-fade="" style="opacity:0;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--b-mut,#CDB7B2)">SCROLL TO SEE THE WORK ↓</div>
+          </div>
+        </div>
+      </div>
+
+      <div ref="{{ spaceRef }}" style="position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 clamp(20px,4vw,48px) clamp(24px,4vh,40px)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px 40px;flex-wrap:wrap;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--b-mut,#CDB7B2)">
+          <span style="color:var(--b-ink,#F3E7E3)">(01) SELECTED WORK</span>
+          <span>DRAG TO ORBIT · SELECT A PROJECT TO OPEN IT</span>
+        </div>
+      </div>
+
+      <div ref="{{ cardsRef }}" style="position:absolute;inset:0;z-index:3;pointer-events:none">
+        <div data-card="" data-i="0" onClick="{{ cardClick }}" onMouseEnter="{{ cardEnter }}" onMouseLeave="{{ cardLeave }}" style="position:absolute;left:0;top:0;width:180px;opacity:0;pointer-events:none;cursor:pointer;will-change:transform,opacity">
+          <div style="background:var(--panel,rgba(22,9,11,0.72));border:1px solid color-mix(in srgb, var(--b-ink,#F3E7E3) 16%, transparent);padding:7px;backdrop-filter:blur(8px);transition:border-color 0.3s" style-hover="border-color: var(--b-acc,#E0445C)">
+            <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#0D0A0B"><div style="position:absolute;inset:0;display:grid;place-items:center;font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:0.08em;color:rgba(243,231,227,0.45)">LOADING…</div><iframe data-src="https://kre-kre.github.io/8x.life_V2/" title="8x.life preview" tabindex="-1" aria-hidden="true" scrolling="no" style="position:absolute;left:0;top:0;width:1280px;height:960px;border:0;transform:scale(var(--cs,0.13));transform-origin:0 0;pointer-events:none;background:transparent"></iframe><div data-cover="" style="position:absolute;inset:0;z-index:1"></div></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 2px 3px"><span style="font-size:13px;font-weight:600;letter-spacing:0.04em">8X.LIFE</span><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.06em;color:var(--b-acc,#E0445C)">OPEN ↗</span></div>
+          </div>
+        </div>
+        <div data-card="" data-i="1" onClick="{{ cardClick }}" onMouseEnter="{{ cardEnter }}" onMouseLeave="{{ cardLeave }}" style="position:absolute;left:0;top:0;width:180px;opacity:0;pointer-events:none;cursor:pointer;will-change:transform,opacity">
+          <div style="background:var(--panel,rgba(22,9,11,0.72));border:1px solid color-mix(in srgb, var(--b-ink,#F3E7E3) 16%, transparent);padding:7px;backdrop-filter:blur(8px);transition:border-color 0.3s" style-hover="border-color: var(--b-acc,#E0445C)">
+            <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#0D0A0B"><div style="position:absolute;inset:0;display:grid;place-items:center;font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:0.08em;color:rgba(243,231,227,0.45)">LOADING…</div><iframe data-src="https://embed.figma.com/deck/VItkcbNoCXxQn8BBpQbZ8A/Longlegs--Visual-Study?node-id=1-42&amp;viewport=-109%2C-56%2C0.52&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;embed-host=share" title="Longlegs preview" tabindex="-1" aria-hidden="true" scrolling="no" style="position:absolute;left:0;top:0;width:1280px;height:960px;border:0;transform:scale(var(--cs,0.13));transform-origin:0 0;pointer-events:none;background:transparent"></iframe><div data-cover="" style="position:absolute;inset:0;z-index:1"></div></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 2px 3px"><span style="font-size:13px;font-weight:600;letter-spacing:0.04em">LONGLEGS</span><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.06em;color:var(--b-acc,#E0445C)">OPEN ↗</span></div>
+          </div>
+        </div>
+        <div data-card="" data-i="2" onClick="{{ cardClick }}" onMouseEnter="{{ cardEnter }}" onMouseLeave="{{ cardLeave }}" style="position:absolute;left:0;top:0;width:180px;opacity:0;pointer-events:none;cursor:pointer;will-change:transform,opacity">
+          <div style="background:var(--panel,rgba(22,9,11,0.72));border:1px solid color-mix(in srgb, var(--b-ink,#F3E7E3) 16%, transparent);padding:7px;backdrop-filter:blur(8px);transition:border-color 0.3s" style-hover="border-color: var(--b-acc,#E0445C)">
+            <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#0D0A0B"><div style="position:absolute;inset:0;display:grid;place-items:center;font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:0.08em;color:rgba(243,231,227,0.45)">LOADING…</div><iframe data-src="https://windforall.energy/" title="Windforall preview" tabindex="-1" aria-hidden="true" scrolling="no" style="position:absolute;left:0;top:0;width:1280px;height:960px;border:0;transform:scale(var(--cs,0.13));transform-origin:0 0;pointer-events:none;background:transparent"></iframe><div data-cover="" style="position:absolute;inset:0;z-index:1"></div></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 2px 3px"><span style="font-size:13px;font-weight:600;letter-spacing:0.04em">WINDFORALL</span><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.06em;color:var(--b-acc,#E0445C)">OPEN ↗</span></div>
+          </div>
+        </div>
+        <div data-card="" data-i="3" onClick="{{ cardClick }}" onMouseEnter="{{ cardEnter }}" onMouseLeave="{{ cardLeave }}" style="position:absolute;left:0;top:0;width:180px;opacity:0;pointer-events:none;cursor:pointer;will-change:transform,opacity">
+          <div style="background:var(--panel,rgba(22,9,11,0.72));border:1px solid color-mix(in srgb, var(--b-ink,#F3E7E3) 16%, transparent);padding:7px;backdrop-filter:blur(8px);transition:border-color 0.3s" style-hover="border-color: var(--b-acc,#E0445C)">
+            <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#0D0A0B"><div style="position:absolute;inset:0;display:grid;place-items:center;font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:0.08em;color:rgba(243,231,227,0.45)">LOADING…</div><iframe data-src="https://kre-kre.github.io/Fateweaver/" title="Fateweaver preview" tabindex="-1" aria-hidden="true" scrolling="no" style="position:absolute;left:0;top:0;width:1280px;height:960px;border:0;transform:scale(var(--cs,0.13));transform-origin:0 0;pointer-events:none;background:transparent"></iframe><div data-cover="" style="position:absolute;inset:0;z-index:1"></div></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 2px 3px"><span style="font-size:13px;font-weight:600;letter-spacing:0.04em">FATEWEAVER</span><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.06em;color:var(--b-acc,#E0445C)">OPEN ↗</span></div>
+          </div>
+        </div>
+        <div data-card="" data-i="4" onClick="{{ cardClick }}" onMouseEnter="{{ cardEnter }}" onMouseLeave="{{ cardLeave }}" style="position:absolute;left:0;top:0;width:180px;opacity:0;pointer-events:none;cursor:pointer;will-change:transform,opacity">
+          <div style="background:var(--panel,rgba(22,9,11,0.72));border:1px solid color-mix(in srgb, var(--b-ink,#F3E7E3) 16%, transparent);padding:7px;backdrop-filter:blur(8px);transition:border-color 0.3s" style-hover="border-color: var(--b-acc,#E0445C)">
+            <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#0D0A0B"><div style="position:absolute;inset:0;display:grid;place-items:center;font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:0.08em;color:rgba(243,231,227,0.45)">LOADING…</div><iframe data-src="https://willow-suite-21617996.figma.site" title="The Living Loom preview" tabindex="-1" aria-hidden="true" scrolling="no" style="position:absolute;left:0;top:0;width:1280px;height:960px;border:0;transform:scale(var(--cs,0.13));transform-origin:0 0;pointer-events:none;background:transparent"></iframe><div data-cover="" style="position:absolute;inset:0;z-index:1"></div></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 2px 3px"><span style="font-size:13px;font-weight:600;letter-spacing:0.04em">LIVING LOOM</span><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.06em;color:var(--b-acc,#E0445C)">OPEN ↗</span></div>
+          </div>
+        </div>
+        <div data-card="" data-i="5" onClick="{{ cardClick }}" onMouseEnter="{{ cardEnter }}" onMouseLeave="{{ cardLeave }}" style="position:absolute;left:0;top:0;width:180px;opacity:0;pointer-events:none;cursor:pointer;will-change:transform,opacity">
+          <div style="background:var(--panel,rgba(22,9,11,0.72));border:1px solid color-mix(in srgb, var(--b-ink,#F3E7E3) 16%, transparent);padding:7px;backdrop-filter:blur(8px);transition:border-color 0.3s" style-hover="border-color: var(--b-acc,#E0445C)">
+            <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#0D0A0B"><img src="./assets/moonbrew/moonbrew-hero.png" alt="Moonbrew campaign" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%;display:block"><div data-cover="" style="position:absolute;inset:0;z-index:1"></div></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 2px 3px"><span style="font-size:13px;font-weight:600;letter-spacing:0.04em">MOONBREW</span><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.06em;color:var(--b-acc,#E0445C)">OPEN ↗</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="practice" data-tone="a" data-screen-label="The Practice" style="color:var(--s-ink,#F3E7E3);position:relative;overflow:hidden;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px)">
+    <div data-line="" aria-hidden="true" style="position:relative;max-width:1160px;margin:0 auto clamp(40px,5vw,64px);height:1px;background:currentColor;opacity:0.4;transform:scaleX(0);transform-origin:0 50%"></div>
+        <div style="position:relative;max-width:1160px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(48px,6vw,80px)">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:24px">
+        <span data-reveal="0" style="opacity:0;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-mut,#D9BDB8)">(02) THE PRACTICE</span>
+        <h2 data-reveal="1" style="opacity:0;margin:0;max-width:900px;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(36px,4.8vw,70px);line-height:1.04;letter-spacing:-0.01em;text-wrap:balance">I work across strategy, design, technology and storytelling.</h2>
+      </div>
+      <div style="width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:0 40px;text-align:left">
+        <div data-reveal="0" style="opacity:0;display:flex;flex-direction:column;gap:14px;padding:24px 0;border-top:1px solid color-mix(in srgb, currentColor 22%, transparent)">
+          <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-acc,#F07A8C)">01 · SHAPE</span>
+          <span style="font-size:clamp(20px,1.7vw,24px);line-height:1.4">Sometimes that means shaping an idea.</span>
+        </div>
+        <div data-reveal="1" style="opacity:0;display:flex;flex-direction:column;gap:14px;padding:24px 0;border-top:1px solid color-mix(in srgb, currentColor 22%, transparent)">
+          <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-acc,#F07A8C)">02 · LANGUAGE</span>
+          <span style="font-size:clamp(20px,1.7vw,24px);line-height:1.4">Sometimes it means giving it a visual language.</span>
+        </div>
+        <div data-reveal="2" style="opacity:0;display:flex;flex-direction:column;gap:14px;padding:24px 0;border-top:1px solid color-mix(in srgb, currentColor 22%, transparent)">
+          <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-acc,#F07A8C)">03 · BUILD</span>
+          <span style="font-size:clamp(20px,1.7vw,24px);line-height:1.4">Sometimes it means building the thing itself.</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+        <p data-reveal="0" style="opacity:0;margin:0;font-size:clamp(18px,1.5vw,21px);line-height:1.5;color:var(--s-mut,#D9BDB8)">The medium changes. The intent doesn’t:</p>
+        <p data-reveal="1" style="opacity:0;margin:0;max-width:980px;font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(38px,5.4vw,84px);line-height:1;letter-spacing:-0.015em;color:var(--s-acc,#F07A8C);text-wrap:balance">to give form to what doesn’t have one yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai" data-tone="d" data-screen-label="AI" style="color:var(--s-ink,#F3E7E3);position:relative;overflow:hidden;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px)">
+    <div data-line="" aria-hidden="true" style="position:relative;max-width:1160px;margin:0 auto clamp(40px,5vw,64px);height:1px;background:currentColor;opacity:0.4;transform:scaleX(0);transform-origin:0 50%"></div>
+        <div style="position:relative;max-width:1160px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(28px,3.5vw,40px)">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:24px">
+          <span data-reveal="0" style="opacity:0;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-mut,#E6CBC6)">(03) AI</span>
+          <h2 data-reveal="1" style="opacity:0;margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(44px,6.2vw,100px);line-height:0.94;letter-spacing:-0.01em;text-wrap:balance">A NEW KIND OF TOOLKIT.</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:16px;max-width:720px">
+          <p data-reveal="1" style="opacity:0;margin:0;font-size:clamp(22px,2vw,28px);line-height:1.3;font-weight:500;text-wrap:balance">AI has changed how quickly an idea can move.</p>
+          <p data-reveal="2" style="opacity:0;margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.6;color:var(--s-mut,#E6CBC6);text-wrap:pretty">I use it to research, explore, prototype, write, build and iterate — collapsing the distance between disciplines and making more room for judgment, curiosity and experimentation.</p>
+        </div>
+      </div>
+      <div data-reveal="1" style="opacity: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 18px; padding: 28px 0; border-top: 1px solid color-mix(in srgb, currentColor 22%, transparent); border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); font-size: clamp(20px,2.1vw,30px); justify-content: center">
+        <span style="transition:color 0.5s;color:{{ v0c }}">Research</span><span style="color:var(--s-mut,#E6CBC6)">→</span>
+        <span style="transition:color 0.5s;color:{{ v1c }}">Explore</span><span style="color:var(--s-mut,#E6CBC6)">→</span>
+        <span style="transition:color 0.5s;color:{{ v2c }}">Prototype</span><span style="color:var(--s-mut,#E6CBC6)">→</span>
+        <span style="transition:color 0.5s;color:{{ v3c }}">Write</span><span style="color:var(--s-mut,#E6CBC6)">→</span>
+        <span style="transition:color 0.5s;color:{{ v4c }}">Build</span><span style="color:var(--s-mut,#E6CBC6)">→</span>
+        <span style="transition:color 0.5s;color:{{ v5c }}">Iterate ↺</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+        <span data-reveal="0" style="opacity:0;font-size:clamp(18px,1.5vw,21px);color:var(--s-mut,#E6CBC6)">Technology is the tool.</span>
+        <span data-reveal="1" style="opacity:0;font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(40px,5.4vw,84px);line-height:1;letter-spacing:-0.015em">The engine is human.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" data-tone="b" data-screen-label="About" style="color:var(--s-ink,#F3E7E3);position:relative;overflow:hidden;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px)">
+    <div data-line="" aria-hidden="true" style="position:relative;max-width:1160px;margin:0 auto clamp(40px,5vw,64px);height:1px;background:currentColor;opacity:0.4;transform:scaleX(0);transform-origin:0 50%"></div>
+        <div style="position:relative;max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:56px 96px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <span data-reveal="0" style="opacity:0;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-mut,#CDB7B2)">(04) ABOUT</span>
+        <p data-reveal="1" style="opacity: 0; margin: 0; font-family: 'Bodoni Moda',serif; font-size: clamp(30px,3vw,35px); line-height: 1.12; text-wrap: pretty">I’m Gargi — a finance &amp; economics graduate, writer and designer interested in the space between business, technology and creativity.</p>
+        <div data-reveal="2" style="opacity:0;display:flex;flex-direction:column;gap:16px;font-size:clamp(17px,1.4vw,19px);line-height:1.6;color:var(--s-mut,#CDB7B2)">
+          <p style="margin:0;text-wrap:pretty">I’ve always been drawn to ideas looking for direction, products looking for shape, stories looking for a world.</p>
+          <p style="margin:0;text-wrap:pretty">So I tend to work across disciplines rather than inside one. Strategy. Design. Technology. Writing. <span style="color:var(--s-ink,#F3E7E3);font-weight:500">Whatever the idea calls for.</span></p>
+          <p style="margin:0;text-wrap:pretty">Currently building, experimenting and figuring out what becomes possible when the distance between imagining and making gets smaller.</p>
+        </div>
+      </div>
+      <div data-reveal="2" style="opacity:0;display:flex;flex-direction:column;gap:20px">
+        <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-mut,#CDB7B2)">(05) CURRENTLY</span>
+        <div style="display:flex;flex-direction:column;border-bottom:1px solid color-mix(in srgb, currentColor 18%, transparent)">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 20px;padding:20px 0;border-top:1px solid color-mix(in srgb, currentColor 18%, transparent)">
+            <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-mut,#CDB7B2)">BUILDING</span>
+            <span style="display:flex;align-items:center;gap:12px;font-size:clamp(19px,1.6vw,22px);font-weight:500">Proofolio<span ref="{{ dotRef }}" style="width:8px;height:8px;border-radius:50%;background:var(--s-acc,#E0445C);display:inline-block"></span></span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 20px;padding:20px 0;border-top:1px solid color-mix(in srgb, currentColor 18%, transparent)">
+            <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-mut,#CDB7B2)">EXPLORING</span>
+            <span style="font-size:clamp(19px,1.6vw,22px);font-weight:500">AI-native creative practice</span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 20px;padding:20px 0;border-top:1px solid color-mix(in srgb, currentColor 18%, transparent)">
+            <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-mut,#CDB7B2)">WRITING</span>
+            <span style="font-size:clamp(19px,1.6vw,22px);font-weight:500">Fiction &amp; essays</span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 20px;padding:20px 0;border-top:1px solid color-mix(in srgb, currentColor 18%, transparent)">
+            <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-mut,#CDB7B2)">BASED</span>
+            <span style="display:flex;align-items:baseline;gap:14px;font-size:clamp(19px,1.6vw,22px);font-weight:500">Ahmedabad, India<span style="font-family:'Geist Mono',monospace;font-size:12px;font-weight:400;letter-spacing:0.06em;color:var(--s-mut,#CDB7B2)">{{ time }}</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-tone="a" data-screen-label="Contact" style="color:var(--s-ink,#F3E7E3);position:relative;overflow:hidden;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 32px">
+    <div data-line="" aria-hidden="true" style="position:relative;max-width:1160px;margin:0 auto clamp(40px,5vw,64px);height:1px;background:currentColor;opacity:0.4;transform:scaleX(0);transform-origin:0 50%"></div>
+        <div style="position:relative;max-width:1160px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(48px,6vw,80px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:56px 96px;align-items:end">
+        <div style="display:flex;flex-direction:column;gap:28px">
+          <span data-reveal="0" style="opacity:0;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-mut,#D9BDB8)">(06) CONTACT</span>
+          <h2 data-reveal="1" style="opacity:0;margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(32px,calc(6.6vw + 8px),112px);line-height:0.95;letter-spacing:-0.015em">HAVE SOMETHING <span style="font-style:italic;font-weight:400;color:var(--s-acc,#F07A8C)">in mind?</span></h2>
+          <div data-reveal="2" style="opacity:0;display:flex;flex-direction:column;gap:10px;font-size:clamp(17px,1.4vw,20px);line-height:1.55">
+            <p style="margin:0;font-weight:500">You don’t need a finished brief.</p>
+            <p style="margin:0;color:var(--s-mut,#D9BDB8);text-wrap:pretty">Bring the half-formed idea, the impossible question, the thing you can’t quite articulate yet.</p>
+          </div>
+        </div>
+        <div data-reveal="2" style="opacity:0;display:flex;flex-direction:column;gap:22px">
+          <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+            <form onSubmit="{{ onSend }}" style="display:flex;flex-direction:column;gap:22px">
+              <label style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-mut,#D9BDB8)">THE HALF-FORMED IDEA</span>
+                <textarea name="message" required="" value="{{ idea }}" onChange="{{ onIdea }}" rows="3" placeholder="It’s something like…" style="width:100%;background:transparent;border:0;border-bottom:1px solid color-mix(in srgb, currentColor 30%, transparent);font-size:clamp(17px,1.4vw,19px);line-height:1.4;outline:none;padding:8px 0 12px;resize:none;font-size:clamp(19px,1.6vw,22px)"></textarea>
+              </label>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:22px">
+                <label style="display:flex;flex-direction:column;gap:8px">
+                  <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-mut,#D9BDB8)">YOUR NAME</span>
+                  <input name="name" value="{{ fname }}" onChange="{{ onName }}" autocomplete="name" placeholder="Name" style="width:100%;background:transparent;border:0;border-bottom:1px solid color-mix(in srgb, currentColor 30%, transparent);font-size:clamp(17px,1.4vw,19px);line-height:1.4;outline:none;padding:8px 0 12px">
+                </label>
+                <label style="display:flex;flex-direction:column;gap:8px">
+                  <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-mut,#D9BDB8)">YOUR EMAIL</span>
+                  <input name="email" type="email" required="" value="{{ femail }}" onChange="{{ onEmail }}" autocomplete="email" placeholder="So I can write back" style="width:100%;background:transparent;border:0;border-bottom:1px solid color-mix(in srgb, currentColor 30%, transparent);font-size:clamp(17px,1.4vw,19px);line-height:1.4;outline:none;padding:8px 0 12px">
+                </label>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:6px">
+                <button type="submit" style="display:inline-flex;align-items:center;gap:14px;padding:20px 28px;border:0;cursor:pointer;background:var(--s-ink,#F6E9E5);color:var(--s-bg,#2A1016);font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:0.08em;transition:background 0.3s" style-hover="background: var(--s-acc,#F07A8C)">{{ sendLabel }}</button>
+                <span style="font-size:14px;line-height:1.4;color:var(--s-mut,#D9BDB8)">{{ status }}</span>
+              </div>
+            </form>
+          </sc-if>
+          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:14px;padding:28px 0;border-top:1px solid color-mix(in srgb, currentColor 22%, transparent);border-bottom:1px solid color-mix(in srgb, currentColor 22%, transparent)">
+              <span style="font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(30px,3vw,44px);line-height:1;color:var(--s-acc,#F07A8C)">Received.</span>
+              <span style="font-size:clamp(17px,1.4vw,19px);line-height:1.55">Thank you. Your idea is in my inbox, and I’ll write back to you soon.</span>
+              <button onClick="{{ resetForm }}" style="align-self:flex-start;background:transparent;border:0;padding:6px 0;cursor:pointer;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--s-mut,#D9BDB8)" style-hover="color: var(--s-ink,#F6E9E5)">SEND ANOTHER →</button>
+            </div>
+          </sc-if>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.06em;color:var(--s-mut,#D9BDB8)">
+            <span>OR EMAIL DIRECTLY:</span>
+            <a href="mailto:gargitripathi19@gmail.com" style="color:var(--s-ink,#F6E9E5)">GARGITRIPATHI19@GMAIL.COM</a>
+            <button onClick="{{ copyEmail }}" type="button" style="background:transparent;border:1px solid color-mix(in srgb, currentColor 30%, transparent);padding:12px 14px;cursor:pointer;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.06em" style-hover="border-color: currentColor">{{ copyLabel }}</button>
+            <a href="https://www.linkedin.com/in/gargi-tripathi/" target="_blank" rel="noopener">LINKEDIN ↗</a>
+          </div>
+        </div>
+      </div>
+      <footer style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px 32px;padding-top:24px;border-top:1px solid color-mix(in srgb, currentColor 22%, transparent);font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.06em;color:var(--s-mut,#D9BDB8)">
+        <span style="color:var(--s-ink,#F6E9E5);font-family:'Geist',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.16em">GARGI TRIPATHI</span>
+        <span>INDEPENDENT CREATIVE PRACTICE</span>
+        <span>STRATEGY · DESIGN · TECHNOLOGY · WRITING</span>
+        <span>© 2026</span>
+      </footer>
+    </div>
+  </section>
+
+  <sc-if value="{{ isOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:clamp(10px,3vw,40px)">
+      <div onClick="{{ close }}" style="position:absolute;inset:0;background:var(--scrim,rgba(6,3,4,0.74));backdrop-filter:blur(14px)"></div>
+      <div ref="{{ panelRef }}" style="position:relative;width:100%;max-width:1400px;height:min(90vh,900px);display:flex;flex-wrap:wrap;overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--b-bg,#0B0607);color:var(--b-ink,#F3E7E3);border:1px solid color-mix(in srgb, var(--b-ink,#F3E7E3) 16%, transparent);box-shadow:0 40px 120px rgba(0,0,0,0.5)">
+        <div data-pc="" style="flex:1 1 300px;max-width:480px;display:flex;flex-direction:column;gap:26px;padding:clamp(22px,2.6vw,36px);border-right:1px solid color-mix(in srgb, currentColor 16%, transparent);overflow:auto">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--b-mut,#CDB7B2)">
+            <span>{{ cur.idx }} · {{ cur.kind }}</span>
+            <button onClick="{{ close }}" style="background:transparent;border:1px solid color-mix(in srgb, currentColor 30%, transparent);padding:13px 16px;cursor:pointer;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.06em" style-hover="border-color: currentColor">ESC ✕</button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <h3 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(34px,3.2vw,50px);line-height:1;text-wrap:balance">{{ cur.title }}</h3>
+            <p style="margin:0;font-size:clamp(18px,1.5vw,21px);line-height:1.4;font-weight:500">{{ cur.line }}</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--b-mut,#CDB7B2)">ROLE</span>
+            <span style="font-size:16px;line-height:1.55">{{ cur.disc }}</span>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <span style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--b-mut,#CDB7B2);padding-bottom:12px">PROCESS</span>
+            <sc-for list="{{ cur.process }}" as="p" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:6px 12px;padding:16px 0;border-top:1px solid color-mix(in srgb, currentColor 16%, transparent)">
+                <span style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--b-acc,#E0445C);padding-top:2px">{{ p.n }}</span>
+                <span style="font-size:16px;font-weight:600">{{ p.t }}</span>
+                <span></span>
+                <span style="font-size:15px;line-height:1.6;color:var(--b-mut,#CDB7B2);text-wrap:pretty">{{ p.d }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="flex:1 1 auto"></div>
+          <a href="{{ cur.url }}" target="_blank" rel="noopener" style="display:inline-flex;justify-content:space-between;align-items:center;padding:18px 20px;background:var(--b-ink,#F3E7E3);color:var(--b-bg,#0B0607);font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:0.08em;transition:background 0.3s" style-hover="background: var(--b-acc,#E0445C); opacity: 1"><span>OPEN PROJECT</span><span>↗</span></a>
+          <div style="display:flex;justify-content:space-between;gap:12px">
+            <button onClick="{{ prev }}" style="background:transparent;border:0;padding:14px 0;cursor:pointer;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em" style-hover="color: var(--b-acc,#E0445C)">← PREV</button>
+            <button onClick="{{ next }}" style="background:transparent;border:0;padding:14px 0;cursor:pointer;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em" style-hover="color: var(--b-acc,#E0445C)">NEXT →</button>
+          </div>
+        </div>
+        <div data-pc="" style="flex:999 1 480px;min-width:0;min-height:52vh;display:flex;flex-direction:column">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid color-mix(in srgb, currentColor 16%, transparent);font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.06em;color:var(--b-mut,#CDB7B2)">
+            <span style="display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><span style="width:6px;height:6px;border-radius:50%;background:var(--b-acc,#E0445C);flex:0 0 auto"></span>{{ cur.plabel }}</span>
+            <a href="{{ cur.url }}" target="_blank" rel="noopener" style="white-space:nowrap">{{ cur.olabel }}</a>
+          </div>
+          <div style="position:relative;flex:1 1 auto;min-height:0">
+            <sc-if value="{{ cur.hasEmbed }}" hint-placeholder-val="{{ true }}">
+              <div style="position:absolute;inset:0;display:grid;place-items:center;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--b-mut,#CDB7B2)">LOADING PREVIEW…</div>
+              <iframe src="{{ cur.embed }}" title="{{ cur.title }}" allow="fullscreen" style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:transparent"></iframe>
+            </sc-if>
+            <sc-if value="{{ cur.hasImages }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;inset:0;overflow:auto;padding:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;align-items:start">
+                <img src="./assets/moonbrew/moonbrew-hero.png" alt="Moonbrew campaign hero" loading="lazy" style="width:100%;height:auto;display:block;border:1px solid color-mix(in srgb, currentColor 14%, transparent)">
+                <img src="./assets/moonbrew/moonbrew-menu.png" alt="Moonbrew menu" loading="lazy" style="width:100%;height:auto;display:block;border:1px solid color-mix(in srgb, currentColor 14%, transparent)">
+                <img src="./assets/moonbrew/moonbrew-system.png" alt="Moonbrew brand system" loading="lazy" style="width:100%;height:auto;display:block;border:1px solid color-mix(in srgb, currentColor 14%, transparent)">
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;palette&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Femme Fatale&quot;,&quot;Ice&quot;,&quot;Ice Night&quot;],&quot;default&quot;:&quot;Ice Night&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;noise&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;default&quot;:0.45,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;form&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Attractor&quot;,&quot;Bloom&quot;,&quot;Sphere&quot;],&quot;default&quot;:&quot;Attractor&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+class Component extends DCLogic {
+  state = { phase: 0, open: -1, verb: 0, time: '', idea: '', fname: '', femail: '', sendState: 'idle', copied: false };
+  rootRef = React.createRef(); wrapRef = React.createRef(); heroRef = React.createRef(); canvasRef = React.createRef();
+  cardsRef = React.createRef(); titleRef = React.createRef(); heroTextRef = React.createRef(); spaceRef = React.createRef();
+  dotRef = React.createRef(); panelRef = React.createRef();
+  phase = 0; layer = 'hero';
+
+  projects = [
+    { n: '01', title: '8X.LIFE', kind: 'EXPERIENCE', line: 'Reframing ambition as an experience.', disc: 'Strategy, art direction, digital design, interaction and build.', url: 'https://kre-kre.github.io/8x.life_V2/', embed: 'https://kre-kre.github.io/8x.life_V2/', host: 'kre-kre.github.io/8x.life_V2',
+      process: [['Spark', '8x needed a careers page that felt like the company itself: a game, not a job board.'], ['Synthesis', 'Founder voice, manifesto and brand cues distilled into one idea, ambition as a sequence of moves.'], ['Form', 'Art direction, design, interaction and front-end build, iterated with AI from first draft to launch.']] },
+    { n: '02', title: 'LONGLEGS: A VISUAL STUDY', kind: 'VISUAL STUDY', line: 'Rethinking how capability becomes credibility.', disc: 'Product concept, strategy, UX, identity and prototype.', url: 'https://www.figma.com/deck/VItkcbNoCXxQn8BBpQbZ8A/Longlegs--Visual-Study?node-id=1-42&viewport=-109%2C-56%2C0.52&t=JKfVMtjYrhrQOjVk-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1', embed: 'https://embed.figma.com/deck/VItkcbNoCXxQn8BBpQbZ8A/Longlegs--Visual-Study?node-id=1-42&viewport=-109%2C-56%2C0.52&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share', host: 'figma.com — Longlegs: Visual Study',
+      process: [['Spark', 'A study in how a visual identity earns trust before a single word is read.'], ['Synthesis', 'Mood, reference and narrative tension mapped into a tight system of type, colour and frame.'], ['Form', 'A presentation-grade visual study and prototype, refined in Figma.']] },
+    { n: '03', title: 'WINDFORALL.ENERGY', kind: 'PRODUCT STORY', line: 'Making clean power legible to the people who fund it.', disc: 'Product narrative, presentation design and visual system.', url: 'https://windforall.energy/', embed: 'https://windforall.energy/', host: 'windforall.energy',
+      process: [['Spark', 'Complex wind-power engineering that investors needed to grasp in minutes.'], ['Synthesis', 'Technical material restructured into one clear narrative arc.'], ['Form', 'A product presentation and visual system, built and iterated with AI tools.']] },
+    { n: '04', title: 'FATEWEAVER', kind: 'AI EXPERIENCE', line: 'A story oracle that spins plots on request.', disc: 'Concept, interaction design, writing and build.', url: 'https://kre-kre.github.io/Fateweaver/', embed: 'https://kre-kre.github.io/Fateweaver/', host: 'kre-kre.github.io/Fateweaver',
+      process: [['Spark', 'What if a story could be consulted, like an oracle?'], ['Synthesis', 'Genres, characters and ritual mechanics shaped into a simple choose-your-fate flow.'], ['Form', 'Concept, writing, interaction design and front-end build.']] },
+    { n: '05', title: 'THE LIVING LOOM', kind: 'CASE STUDY', line: 'A case study, woven thread by thread.', disc: 'Case study, art direction and web design.', url: 'https://willow-suite-21617996.figma.site', embed: 'https://willow-suite-21617996.figma.site', host: 'willow-suite-21617996.figma.site',
+      process: [['Spark', 'A case study that had to feel as crafted as the work it describes.'], ['Synthesis', 'Narrative and visuals woven into a single scrolling story.'], ['Form', 'Art-directed and designed as a live web case study.']] },
+    { n: '06', title: 'MOONBREW CAFÉ', kind: 'BRAND', line: 'A café identity, brewed after dark.', disc: 'Brand campaign, identity, menu and collateral.', url: 'https://kre-kre.github.io/Visual-Design-Portfolio/cafe.html', embed: '', host: 'Moonbrew Café', images: [['./assets/moonbrew/moonbrew-hero.png', 'Moonbrew campaign hero'], ['./assets/moonbrew/moonbrew-menu.png', 'Moonbrew menu'], ['./assets/moonbrew/moonbrew-system.png', 'Moonbrew brand system']],
+      process: [['Spark', 'A café that only really comes alive after dark.'], ['Synthesis', 'Mood, menu and voice distilled into one nocturnal identity.'], ['Form', 'Campaign visuals, menu design and a brand system.']] },
+  ];
+
+  palettes = {
+    'Femme Fatale': { mode: 'dark', glow: 'radial-gradient(110% 80% at 78% 6%, rgba(106,14,29,0.9) 0%, rgba(43,7,13,0.55) 38%, transparent 74%), radial-gradient(60% 50% at 0% 100%, rgba(122,20,36,0.35), transparent 70%)', p1: '243,231,227', p2: '224,68,92', panel: 'rgba(22,9,11,0.72)', scrim: 'rgba(6,3,4,0.74)',
+      b: ['#0B0607', '#F3E7E3', '#CDB7B2', '#E0445C', 'screen'], a: ['#3A1220', '#F6E9E5', '#DDC2BD', '#F28A9A', 'screen'], d: ['#5C0F20', '#F7ECE8', '#EBD1CC', '#FFA3B0', 'screen'],
+      grad: 'radial-gradient(110% 80% at 78% 6%, #6A0E1D 0%, #2B070D 38%, #0B0607 74%), radial-gradient(60% 50% at 0% 100%, rgba(122,20,36,0.35), transparent 70%), #0B0607',
+      silk: ['radial-gradient(42% 60% at 30% 40%, rgba(122,20,36,0.8), transparent 70%), radial-gradient(36% 52% at 72% 58%, rgba(224,68,92,0.38), transparent 70%), radial-gradient(50% 42% at 50% 95%, rgba(43,7,13,1), transparent 70%)', 'radial-gradient(30% 44% at 60% 30%, rgba(224,68,92,0.4), transparent 70%), radial-gradient(44% 36% at 25% 80%, rgba(122,20,36,0.8), transparent 70%)'] },
+    'Ice': { mode: 'light', glow: 'radial-gradient(90% 70% at 82% 0%, rgba(210,233,255,1) 0%, transparent 70%), radial-gradient(70% 60% at 0% 100%, rgba(58,96,133,0.3), transparent 70%)', p1: '27,35,43', p2: '58,96,133', panel: 'rgba(236,245,254,0.82)', scrim: 'rgba(27,35,43,0.45)',
+      b: ['#E2F0FD', '#1B232B', '#3A6085', '#3A6085', 'multiply'], a: ['#D2E9FF', '#1B232B', '#34587C', '#2F5479', 'multiply'], d: ['#B5D2EE', '#141B22', '#2A4C6E', '#20405F', 'multiply'],
+      grad: 'radial-gradient(90% 70% at 82% 0%, #D2E9FF 0%, rgba(210,233,255,0) 70%), radial-gradient(70% 60% at 0% 100%, rgba(58,96,133,0.30), rgba(58,96,133,0) 70%), #E2F0FD',
+      silk: ['radial-gradient(42% 60% at 30% 40%, rgba(210,233,255,1), transparent 70%), radial-gradient(36% 52% at 72% 58%, rgba(58,96,133,0.32), transparent 70%), radial-gradient(50% 42% at 50% 95%, rgba(58,96,133,0.22), transparent 70%)', 'radial-gradient(30% 44% at 60% 30%, rgba(58,96,133,0.22), transparent 70%), radial-gradient(44% 36% at 25% 80%, rgba(210,233,255,0.9), transparent 70%)'] },
+    'Ice Night': { mode: 'dark', glow: 'radial-gradient(100% 80% at 80% 0%, rgba(58,96,133,0.9) 0%, rgba(36,50,63,0.6) 42%, transparent 76%)', p1: '226,240,253', p2: '210,233,255', panel: 'rgba(27,35,43,0.74)', scrim: 'rgba(10,14,18,0.7)',
+      b: ['#1B232B', '#E2F0FD', '#A9C4DE', '#D2E9FF', 'screen'], a: ['#22384C', '#E2F0FD', '#B3CCE4', '#D2E9FF', 'screen'], d: ['#335272', '#F2F8FE', '#C3DAEF', '#FFFFFF', 'screen'],
+      grad: 'radial-gradient(100% 80% at 80% 0%, #3A6085 0%, #24323F 42%, #1B232B 76%), #1B232B',
+      silk: ['radial-gradient(42% 60% at 30% 40%, rgba(58,96,133,0.85), transparent 70%), radial-gradient(36% 52% at 72% 58%, rgba(210,233,255,0.18), transparent 70%), radial-gradient(50% 42% at 50% 95%, rgba(18,26,34,1), transparent 70%)', 'radial-gradient(30% 44% at 60% 30%, rgba(210,233,255,0.16), transparent 70%), radial-gradient(44% 36% at 25% 80%, rgba(58,96,133,0.8), transparent 70%)'] },
+  };
+
+  componentDidMount() {
+    this.reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.applyTheme();
+    this.initScene();
+    this.playIntro();
+    this.initReveal();
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+    requestAnimationFrame(() => requestAnimationFrame(this.onScroll));
+    window.addEventListener('load', this.onScroll);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => this.onScroll());
+    if (this.rootRef.current && 'ResizeObserver' in window) { this.rro = new ResizeObserver(() => this.onScroll()); this.rro.observe(this.rootRef.current); }
+    this.verbTimer = setInterval(() => this.setState(s => ({ verb: (s.verb + 1) % 6 })), 1300);
+    this.updateTime(); this.clock = setInterval(() => this.updateTime(), 20000);
+    this.onKey = (e) => {
+      if (this.state.open < 0) return;
+      if (e.key === 'Escape') this.close();
+      if (e.key === 'ArrowRight') this.step(1);
+      if (e.key === 'ArrowLeft') this.step(-1);
+    };
+    window.addEventListener('keydown', this.onKey);
+    if (!this.reduced && this.rootRef.current) {
+      const sa = this.rootRef.current.querySelector('[data-silk="a"]'), sb = this.rootRef.current.querySelector('[data-silk="b"]');
+      if (sa) sa.animate([{ transform: 'translate(-6%,-4%) rotate(0deg) scale(1.15)' }, { transform: 'translate(6%,5%) rotate(18deg) scale(1.3)' }, { transform: 'translate(-6%,-4%) rotate(0deg) scale(1.15)' }], { duration: 22000, iterations: Infinity, easing: 'ease-in-out' });
+      if (sb) sb.animate([{ transform: 'translate(5%,3%) rotate(0deg) scale(1.2)' }, { transform: 'translate(-6%,-6%) rotate(-22deg) scale(1.1)' }, { transform: 'translate(5%,3%) rotate(0deg) scale(1.2)' }], { duration: 30000, iterations: Infinity, easing: 'ease-in-out' });
+      if (this.dotRef.current) this.dotRef.current.animate([{ opacity: 1, transform: 'scale(1)' }, { opacity: 0.25, transform: 'scale(0.55)' }], { duration: 1100, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' });
+    }
+  }
+
+  componentDidUpdate(prev, prevState) {
+    if (prev.palette !== this.props.palette || prev.noise !== this.props.noise) this.applyTheme();
+    if (prev.form !== this.props.form) this.buildForm();
+    if (prevState && prevState.open < 0 && this.state.open >= 0) this.animateOpen();
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    clearInterval(this.verbTimer); clearInterval(this.clock);
+    (this.timers || []).forEach(clearTimeout);
+    if (this.ro) this.ro.disconnect(); if (this.lio) this.lio.disconnect(); if (this.io) this.io.disconnect(); if (this.rio) this.rio.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('load', this.onScroll);
+    if (this.rro) this.rro.disconnect();
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('keydown', this.onKey);
+    window.removeEventListener('pointermove', this.onMove);
+    window.removeEventListener('pointerup', this.onUp);
+    document.body.style.overflow = '';
+  }
+
+  updateTime() {
+    try { this.setState({ time: new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit' }).format(new Date()) + ' IST' }); } catch (e) {}
+  }
+
+  applyTheme() {
+    const th = this.palettes[this.props.palette] || this.palettes['Ice Night'];
+    this.theme = { ...th, c1: 'rgb(' + th.p1 + ')', c2: 'rgb(' + th.p2 + ')' };
+    const el = this.rootRef.current; if (!el) return;
+    const n = this.props.noise ?? 0.45;
+    const v = { '--glow': th.glow, '--silkA': th.silk[0], '--silkB': th.silk[1], '--panel': th.panel, '--scrim': th.scrim, '--field': String(0.3 + n * 0.7), '--grain': String(0.15 + n * 0.6) };
+    ['b', 'a', 'd'].forEach(k => { const s = th[k]; v['--' + k + '-bg'] = s[0]; v['--' + k + '-ink'] = s[1]; v['--' + k + '-mut'] = s[2]; v['--' + k + '-acc'] = s[3]; v['--' + k + '-blend'] = s[4]; });
+    Object.keys(v).forEach(k => el.style.setProperty(k, v[k]));
+    el.querySelectorAll('section[data-tone]').forEach(sec => { const t = th[sec.getAttribute('data-tone')]; sec.style.setProperty('--s-bg', t[0]); sec.style.setProperty('--s-ink', t[1]); sec.style.setProperty('--s-mut', t[2]); sec.style.setProperty('--s-acc', t[3]); });
+    this.applyTone();
+  }
+
+  hex(h) { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
+  mixHex(a, b, t) { const x = this.hex(a), y = this.hex(b); return 'rgb(' + x.map((c, i) => Math.round(c + (y[i] - c) * t)).join(',') + ')'; }
+
+  applyTone() {
+    const root = this.rootRef.current, th = this.palettes[this.props.palette] || this.palettes['Ice Night'];
+    if (!root) return;
+    const secs = Array.from(root.querySelectorAll('[data-tone]')); if (!secs.length) return;
+    const vh = window.innerHeight, mid = vh * 0.5, band = vh * 0.38;
+    let i = secs.findIndex(el => { const r = el.getBoundingClientRect(); return r.top <= mid && r.bottom > mid; });
+    if (i < 0) i = secs[0].getBoundingClientRect().top > mid ? 0 : secs.length - 1;
+    const r = secs[i].getBoundingClientRect(), sm = (u) => u * u * (3 - 2 * u);
+    let j = i, w = 0;
+    if (i + 1 < secs.length && r.bottom - mid < band) { j = i + 1; w = 0.5 * sm(1 - (r.bottom - mid) / band); }
+    else if (i > 0 && mid - r.top < band) { j = i - 1; w = 0.5 * sm(1 - (mid - r.top) / band); }
+    const A = th[secs[i].getAttribute('data-tone')], B = th[secs[j].getAttribute('data-tone')];
+    const wt = { a: 0, b: 0, d: 0 }; wt[secs[i].getAttribute('data-tone')] += 1 - w; wt[secs[j].getAttribute('data-tone')] += w;
+    const bgNow = this.mixHex(A[0], B[0], w);
+    const lum = this.hex(w < 0.5 ? A[0] : B[0]).reduce((s, c) => s + c, 0) / 765;
+    const set = (k, val) => root.style.setProperty(k, val);
+    set('--bg-now', bgNow); set('--ink-now', this.mixHex(A[1], B[1], w)); set('--mut-now', this.mixHex(A[2], B[2], w)); set('--acc-now', this.mixHex(A[3], B[3], w));
+    set('--blend-now', lum > 0.5 ? 'multiply' : 'screen');
+    set('--glow-op', (wt.b + 0.4 * wt.d + 0.12 * wt.a).toFixed(3));
+    set('--silk-op', (wt.b + 0.7 * wt.d + 0.22 * wt.a).toFixed(3));
+    document.body.style.background = bgNow;
+  }
+
+  loadPreviews() {
+    if (this.previewsLoaded || !this.cardsRef.current) return;
+    this.previewsLoaded = true;
+    this.cardsRef.current.querySelectorAll('iframe[data-src]').forEach(f => { f.src = f.getAttribute('data-src'); });
+  }
+
+  initReveal() {
+    const root = this.rootRef.current; if (!root) return;
+    const els = root.querySelectorAll('[data-reveal]');
+    if (this.reduced || !('IntersectionObserver' in window)) { els.forEach(el => { el.style.opacity = '1'; }); return; }
+    this.rio = new IntersectionObserver((es) => es.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target, d = +(el.getAttribute('data-reveal') || 0);
+      el.animate([{ opacity: 0, transform: 'translateY(26px)' }, { opacity: 1, transform: 'none' }], { duration: 900, delay: d * 130, easing: 'cubic-bezier(.2,.7,.1,1)', fill: 'forwards' });
+      this.rio.unobserve(el);
+    }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(el => this.rio.observe(el));
+    const lines = root.querySelectorAll('[data-line]');
+    if (this.reduced || !('IntersectionObserver' in window)) { lines.forEach(el => { el.style.transform = 'none'; }); return; }
+    this.lio = new IntersectionObserver((es) => es.forEach(en => {
+      if (!en.isIntersecting) return;
+      en.target.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: 800, easing: 'cubic-bezier(.3,0,.2,1)', fill: 'forwards' });
+      this.lio.unobserve(en.target);
+    }), { threshold: 0, rootMargin: '0px 0px 0px 0px' });
+    lines.forEach(el => this.lio.observe(el));
+  }
+
+  gauss() { let u = 0; while (!u) u = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * Math.random()); }
+
+  initScene() {
+    const hero = this.heroRef.current, cv = this.canvasRef.current;
+    if (!hero || !cv) return;
+    this.ctx = cv.getContext('2d');
+    const N = this.N = window.innerWidth < 720 ? 1500 : 2600, F = () => new Float32Array(N * 3);
+    this.pos = F(); this.sc = F(); this.sp = F(); this.att = F(); this.blo = F(); this.sph = F(); this.lat = F(); this.tor = F(); this.cloud = F(); this.core = F(); this.wave = F();
+    const G = Math.ceil(Math.cbrt(N)), cells = G * G * G, perm = Array.from({ length: cells }, (_, q) => q);
+    for (let q = cells - 1; q > 0; q--) { const r2 = Math.floor(Math.random() * (q + 1)); const tq = perm[q]; perm[q] = perm[r2]; perm[r2] = tq; }
+    this.spd = new Float32Array(N); this.sd = new Float32Array(N); this.kind = new Uint8Array(N); this.tone = new Uint8Array(N); this.off = new Float32Array(N * 2);
+    const g = () => this.gauss(), j = () => (Math.random() - 0.5) * 0.05;
+    let lx = 0.1, ly = 0, lz = 0; const dt = 0.006;
+    const st = () => { const dx = 10 * (ly - lx), dy = lx * (28 - lz) - ly, dz = lx * ly - (8 / 3) * lz; lx += dx * dt; ly += dy * dt; lz += dz * dt; };
+    for (let k = 0; k < 800; k++) st();
+    for (let i = 0; i < N; i++) {
+      const i3 = i * 3;
+      this.sc[i3] = (Math.random() * 2 - 1) * 4.4; this.sc[i3 + 1] = (Math.random() * 2 - 1) * 2.6; this.sc[i3 + 2] = (Math.random() * 2 - 1) * 3;
+      this.spd[i] = 0.012 + Math.random() * 0.03; this.sd[i] = Math.random() * 1000;
+      const r = Math.random(); this.kind[i] = r < 0.42 ? 0 : (r < 0.86 ? 1 : 2);
+      this.tone[i] = Math.random() < 0.14 ? 1 : 0;
+      if (this.kind[i] === 1) {
+        const a = Math.random() * Math.PI * 2, ring = Math.random() < 0.72, rr = ring ? 2.15 + g() * 0.16 : 2.95 + g() * 0.03;
+        this.sp[i3] = Math.cos(a) * rr; this.sp[i3 + 1] = g() * (ring ? 0.05 : 0.01); this.sp[i3 + 2] = Math.sin(a) * rr;
+      } else if (this.kind[i] === 2) {
+        const u = Math.random() * 2 - 1, a = Math.random() * Math.PI * 2, rr = 3.6 + Math.random() * 2.6, s = Math.sqrt(1 - u * u);
+        this.sp[i3] = Math.cos(a) * s * rr; this.sp[i3 + 1] = u * rr * 0.6; this.sp[i3 + 2] = Math.sin(a) * s * rr;
+      }
+      st(); st(); st();
+      this.att[i3] = lx / 19 + j(); this.att[i3 + 1] = (lz - 24) / 19 + j(); this.att[i3 + 2] = ly / 19 + j();
+      const t = i / N, br = Math.sqrt(t) * 1.4, ba = i * 2.39996, petal = 1 + 0.24 * Math.cos(5 * ba + br * 2.4);
+      this.blo[i3] = Math.cos(ba) * br * petal + j(); this.blo[i3 + 2] = Math.sin(ba) * br * petal + j(); this.blo[i3 + 1] = -0.6 + Math.pow(br, 1.6) * 0.8 + 0.07 * Math.sin(5 * ba) + j();
+      const sy = 1 - (i / (N - 1)) * 2, sr = Math.sqrt(1 - sy * sy), sa = i * 2.39996, srr = 1.05 * (0.9 + Math.random() * 0.14);
+      this.sph[i3] = Math.cos(sa) * sr * srr; this.sph[i3 + 1] = sy * srr; this.sph[i3 + 2] = Math.sin(sa) * sr * srr;
+      const c = perm[i], ix = c % G, iy = Math.floor(c / G) % G, iz = Math.floor(c / (G * G)), mm = 1 / (G - 1);
+      this.lat[i3] = (ix * mm * 2 - 1) * 0.9; this.lat[i3 + 1] = (iy * mm * 2 - 1) * 0.9; this.lat[i3 + 2] = (iz * mm * 2 - 1) * 0.9;
+      const tu = Math.random() * Math.PI * 2, tv = Math.random() * Math.PI * 2, tR = 1.15, tr = 0.36 + g() * 0.03;
+      this.tor[i3] = (tR + tr * Math.cos(tv)) * Math.cos(tu); this.tor[i3 + 1] = tr * Math.sin(tv); this.tor[i3 + 2] = (tR + tr * Math.cos(tv)) * Math.sin(tu);
+      this.cloud[i3] = g() * 0.9; this.cloud[i3 + 1] = g() * 0.55; this.cloud[i3 + 2] = g() * 0.9;
+      this.wave[i3] = (Math.random() * 2 - 1) * 2.6; this.wave[i3 + 1] = 0; this.wave[i3 + 2] = (Math.random() * 2 - 1) * 1.5;
+      const ux = g(), uy = g(), uz = g(), ul = Math.hypot(ux, uy, uz) || 1, cr = Math.pow(Math.random(), 0.7);
+      this.core[i3] = ux / ul * cr; this.core[i3 + 1] = uy / ul * cr; this.core[i3 + 2] = uz / ul * cr;
+      this.pos[i3] = this.sc[i3] * 1.5; this.pos[i3 + 1] = this.sc[i3 + 1] * 1.5; this.pos[i3 + 2] = this.sc[i3 + 2] * 1.5;
+    }
+    this.buildForm();
+    this.cam = { s: 0, a: 0, cy: 0, cx: 0.5 }; this.condense = 0;
+    this.yaw = 0.5; this.pitch = -0.26; this.tYaw = this.yaw; this.tPitch = this.pitch; this.vel = 0;
+    this.cardIn = new Float32Array(6); this.hoverI = -1; this.visible = true; this.mix = 0;
+    this.resize();
+    this.onResize = () => this.resize(); window.addEventListener('resize', this.onResize);
+    hero.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0) return;
+      if (e.target.closest && e.target.closest('button,a,[data-nodrag]')) return;
+      this.drag = { x: e.clientX, y: e.clientY, yaw: this.tYaw, pitch: this.tPitch, moved: 0, lx: e.clientX, lt: performance.now() };
+      this.dragMoved = false; this.vel = 0;
+    });
+    document.addEventListener('pointerleave', () => { this.mouse = null; });
+    this.onMove = (e) => {
+      this.mouse = { x: e.clientX, y: e.clientY };
+      if (!this.drag) return;
+      const dx = e.clientX - this.drag.x, dy = e.clientY - this.drag.y;
+      this.drag.moved = Math.max(this.drag.moved, Math.abs(dx) + Math.abs(dy));
+      this.tYaw = this.drag.yaw + dx * 0.006;
+      this.tPitch = Math.max(-0.8, Math.min(0.2, this.drag.pitch + dy * 0.003));
+      const now = performance.now();
+      this.vel = (e.clientX - this.drag.lx) / Math.max(16, now - this.drag.lt) * 0.096;
+      this.drag.lx = e.clientX; this.drag.lt = now;
+      if (this.drag.moved > 6) this.dragMoved = true;
+    };
+    this.onUp = () => { this.drag = null; };
+    window.addEventListener('pointermove', this.onMove);
+    window.addEventListener('pointerup', this.onUp);
+    this.loop = this.loop.bind(this);
+    this.raf = requestAnimationFrame(this.loop);
+  }
+
+  buildForm() {
+    const f = this.props.form || 'Attractor';
+    this.fm = f === 'Bloom' ? this.blo : (f === 'Sphere' ? this.sph : this.att);
+  }
+
+  resize() {
+    const hero = this.heroRef.current, cv = this.canvasRef.current; if (!hero || !cv || !this.ctx) return;
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    this.w = window.innerWidth; this.h = window.innerHeight;
+    cv.width = Math.round(this.w * dpr); cv.height = Math.round(this.h * dpr);
+    this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const narrow = this.w < 760;
+    this.S1 = Math.min(this.w * (narrow ? 0.34 : 0.26), this.h * 0.38);
+    this.S2 = Math.min(this.w * (narrow ? 0.22 : 0.17), this.h * 0.26);
+    this.B = Math.min(this.w * (narrow ? 0.3 : 0.2), this.h * 0.3);
+    this.cx = this.w * 0.5;
+    this.cw = narrow ? Math.max(96, Math.min(124, this.w * 0.28)) : Math.max(104, Math.min(184, this.S2 * 0.8));
+    if (narrow !== this.wasNarrow) { this.tPitch = narrow ? -0.62 : -0.26; this.wasNarrow = narrow; }
+    if (narrow) this.S2 = Math.min(this.w * 0.26, this.h * 0.2);
+    this.cards = this.cardsRef.current ? Array.from(this.cardsRef.current.querySelectorAll('[data-card]')) : [];
+    this.cards.forEach(c => { c.style.width = this.cw + 'px'; });
+    if (this.cardsRef.current) this.cardsRef.current.style.setProperty('--cs', ((this.cw - 16) / 1280).toFixed(4));
+  }
+
+  onScroll = () => {
+    this.applyTone();
+    const root = this.rootRef.current;
+    if (root) {
+      const mid = window.innerHeight * 0.5; let L = 'hero';
+      root.querySelectorAll('[data-tone]').forEach(el => { const r = el.getBoundingClientRect(); if (r.top <= mid && r.bottom > mid) L = el.id === 'top' ? 'hero' : el.id; });
+      this.layer = L;
+    }
+    const w = this.wrapRef.current; if (!w) return;
+    const r = w.getBoundingClientRect(), vh = window.innerHeight;
+    const p = Math.max(0, Math.min(1, -r.top / Math.max(1, r.height - vh)));
+    const tp = Math.min(1, p / 0.3);
+    const ht = this.heroTextRef.current;
+    if (ht) { ht.style.opacity = String(1 - tp); ht.style.transform = 'translateY(' + (-tp * 60).toFixed(1) + 'px)'; }
+    const sp = this.spaceRef.current;
+    if (sp) sp.style.opacity = String(Math.max(0, Math.min(1, (p - 0.3) / 0.2)));
+    if (this.phase >= 1) {
+      if (p > 0.24 && this.phase !== 2) { this.phase = 2; this.t2 = performance.now(); this.loadPreviews(); this.setState({ phase: 2 }); }
+      else if (p < 0.14 && this.phase === 2) { this.phase = 1; this.setState({ phase: 1 }); }
+    }
+  };
+
+  loop(now) {
+    this.raf = requestAnimationFrame(this.loop);
+    const ctx = this.ctx; if (!ctx || !this.w) return;
+    const t = now / 1000, ph = this.phase, th = this.theme, dark = th.mode === 'dark';
+    if (!this.drag) {
+      this.tYaw += this.vel; this.vel *= 0.94;
+      if (this.hoverI < 0 && this.state.open < 0 && !this.reduced) this.tYaw += this.layer === 'hero' ? 0.0017 : 0.0011;
+    }
+    this.yaw += (this.tYaw - this.yaw) * 0.08; this.pitch += (this.tPitch - this.pitch) * 0.08;
+    this.mix += ((ph === 2 ? 1 : 0) - this.mix) * 0.045;
+    const mx = this.mix, cy_ = Math.cos(this.yaw), sy_ = Math.sin(this.yaw), cp = Math.cos(this.pitch), sp = Math.sin(this.pitch);
+    const L = this.layer, hero = L === 'hero';
+    this.condense += (Math.min(1, (this.state.idea || '').length / 180) - this.condense) * 0.05;
+    const tS = hero ? this.S1 + (this.S2 - this.S1) * mx : this.B * ({ practice: 1.1, ai: 1.2, about: 1.05, contact: 1.9 }[L] || 1.1);
+    const tA = hero ? 1 : ({ practice: 0.55, ai: 0.6, about: 0.55, contact: 0.5 + 0.3 * this.condense }[L] || 0.5);
+    const tY = hero ? 0.48 - 0.02 * mx : (L === 'contact' ? 1 : 0.5);
+    const tX = L === 'contact' ? 0 : 0.5;
+    const cam = this.cam; if (!cam.s) { cam.s = tS; cam.a = tA; cam.cy = tY; cam.cx = tX; }
+    cam.cx += (tX - cam.cx) * 0.04;
+    cam.s += (tS - cam.s) * 0.04; cam.a += (tA - cam.a) * 0.04; cam.cy += (tY - cam.cy) * 0.04;
+    const S = cam.s, cx = this.w * cam.cx, cy = this.h * cam.cy, D = 6;
+    ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1;
+    ctx.clearRect(0, 0, this.w, this.h);
+    const gr = ctx.createRadialGradient(cx, cy, 0, cx, cy, S * 1.8);
+    gr.addColorStop(0, 'rgba(' + th.p2 + ',' + ((dark ? 0.16 : 0.14) * cam.a).toFixed(3) + ')'); gr.addColorStop(1, 'rgba(' + th.p2 + ',0)');
+    ctx.fillStyle = gr; ctx.fillRect(0, 0, this.w, this.h);
+    ctx.globalCompositeOperation = dark ? 'lighter' : 'source-over';
+    const loose = hero ? (ph === 0 ? 0.22 : (ph === 1 ? 0.05 : 0.025)) : ({ practice: 0.006, ai: 0.025, about: 0.01, contact: 0.02 }[L] || 0.03), fs = ph === 2 ? 0.58 : 0.86;
+    const shp = { practice: this.lat, ai: this.tor, about: this.wave, contact: this.sph }[L], coreR = 1.1 - 0.7 * this.condense;
+    const fade = Math.min(1, (now - this.t0) / 1600), m = this.mouse, fm = this.fm;
+    const aMul = (dark ? 0.8 : 0.74) * (hero ? 0.6 + 0.4 * mx : 1) * cam.a, szMul = hero ? 1 : 1.05;
+    const N = this.N, pos = this.pos, off = this.off;
+    for (let i = 0; i < N; i++) {
+      const i3 = i * 3; let tx, ty, tz;
+      if (!hero) { const q = L === 'contact' ? 0.85 + 0.15 * (1 - this.condense) : 1; if (false) { tx = this.sp[i3]; ty = this.sp[i3 + 1]; tz = this.sp[i3 + 2]; } else { tx = shp[i3] * q; ty = shp[i3 + 1] * q; tz = shp[i3 + 2] * q; } }
+      else if (ph === 0) { tx = this.sc[i3]; ty = this.sc[i3 + 1]; tz = this.sc[i3 + 2]; }
+      else if (ph === 1 || this.kind[i] === 0) { tx = fm[i3] * fs; ty = fm[i3 + 1] * fs; tz = fm[i3 + 2] * fs; }
+      else { tx = this.sp[i3]; ty = this.sp[i3 + 1]; tz = this.sp[i3 + 2]; }
+      const s = this.sd[i];
+      if (L === 'about') ty += 0.3 * Math.sin(tx * 1.7 + t * 0.9) + 0.14 * Math.cos(tz * 2.3 + t * 0.6);
+      tx += Math.sin(t * 0.5 + s) * loose; ty += Math.cos(t * 0.43 + s * 1.3) * loose; tz += Math.sin(t * 0.37 + s * 0.7) * loose;
+      const k = this.spd[i];
+      pos[i3] += (tx - pos[i3]) * k; pos[i3 + 1] += (ty - pos[i3 + 1]) * k; pos[i3 + 2] += (tz - pos[i3 + 2]) * k;
+      const x = pos[i3], y = pos[i3 + 1], z = pos[i3 + 2];
+      const x1 = x * cy_ - z * sy_, z1 = x * sy_ + z * cy_;
+      const y1 = y * cp - z1 * sp, z2 = y * sp + z1 * cp;
+      const pr = D / (D + z2); if (pr <= 0) continue;
+      let sx = cx + x1 * S * pr, sy = cy - y1 * S * pr;
+      const o = i * 2;
+      if (m) {
+        const dx = sx + off[o] - m.x, dy = sy + off[o + 1] - m.y, d2 = dx * dx + dy * dy;
+        if (d2 < 9025) { const dd = Math.sqrt(d2) || 1, f = (95 - dd) / 95 * 2.2; off[o] += dx / dd * f; off[o + 1] += dy / dd * f; }
+      }
+      off[o] *= 0.94; off[o + 1] *= 0.94;
+      sx += off[o]; sy += off[o + 1];
+      const a = Math.max(0.06, Math.min(1, (pr - 0.55) * 1.3)) * fade * (this.kind[i] === 2 && ph === 2 ? 0.5 : 1);
+      ctx.globalAlpha = Math.min(1, a * aMul);
+      ctx.fillStyle = this.tone[i] ? th.c2 : th.c1;
+      const sz = (this.tone[i] ? 2 : 1.45) * pr * szMul;
+      ctx.fillRect(sx, sy, sz, sz);
+    }
+    ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1;
+    const cards = this.cards || [], n = cards.length, R = 2.15;
+    for (let i = 0; i < n; i++) {
+      const el = cards[i];
+      const target = hero && ph === 2 && now > (this.t2 || 0) + i * 140 ? 1 : 0;
+      this.cardIn[i] += (target - this.cardIn[i]) * (target ? 0.05 : 0.12);
+      const ci = this.cardIn[i];
+      if (ci < 0.004 && !target) { if (el.style.opacity !== '0') { el.style.opacity = '0'; el.style.pointerEvents = 'none'; } continue; }
+      const ang = i / n * Math.PI * 2, x = Math.cos(ang) * R, z = Math.sin(ang) * R, y = i % 2 ? 0.18 : -0.12;
+      const x1 = x * cy_ - z * sy_, z1 = x * sy_ + z * cy_;
+      const y1 = y * cp - z1 * sp, z2 = y * sp + z1 * cp;
+      const pr = D / (D + z2);
+      const sc = pr * 0.86 * (0.6 + 0.4 * ci) * (this.hoverI === i ? 1.06 : 1);
+      const hw = this.cw * sc / 2 + 12, hh = this.cw * 0.95 * sc / 2;
+      let sx = cx + x1 * S * pr, sy = cy - y1 * S * pr;
+      sx = Math.max(hw, Math.min(this.w - hw, sx));
+      sy = Math.max(hh + 100, Math.min(this.h - hh - 70, sy));
+      const op = ci * Math.max(0.3, Math.min(1, (pr - 0.72) * 2.4));
+      el.style.transform = 'translate3d(' + sx.toFixed(1) + 'px,' + sy.toFixed(1) + 'px,0) translate(-50%,-50%) scale(' + sc.toFixed(3) + ')';
+      el.style.opacity = op.toFixed(3);
+      el.style.zIndex = String(Math.round(pr * 100));
+      el.style.pointerEvents = ci > 0.5 ? 'auto' : 'none';
+      if (ci > 0.02) {
+        ctx.strokeStyle = 'rgba(' + th.p1 + ',' + (0.18 * ci * Math.min(1, pr)).toFixed(3) + ')';
+        ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(sx, sy); ctx.stroke();
+      }
+    }
+  }
+
+  playIntro = () => {
+    (this.timers || []).forEach(clearTimeout); this.timers = [];
+    this.phase = 0; this.t0 = performance.now(); this.setState({ phase: 0 });
+    if (this.pos) for (let i = 0; i < this.N * 3; i++) this.pos[i] = this.sc[i] * 1.5;
+    if (this.cardIn) this.cardIn.fill(0);
+    const rm = this.reduced;
+    const words = this.titleRef.current ? this.titleRef.current.querySelectorAll('[data-w]') : [];
+    words.forEach((el, i) => {
+      el.getAnimations().forEach(a => a.cancel());
+      el.animate([
+        { opacity: 0, filter: 'blur(18px)', transform: 'translateY(0.1em)', letterSpacing: '0.22em' },
+        { opacity: 1, filter: 'blur(0px)', transform: 'none', letterSpacing: '0em' }
+      ], { duration: rm ? 10 : 2400, delay: rm ? 0 : 400 + i * 600, easing: 'cubic-bezier(.16,.8,.2,1)', fill: 'both' });
+    });
+    const fades = this.heroRef.current ? this.heroRef.current.querySelectorAll('[data-fade]') : [];
+    fades.forEach((el, i) => {
+      el.getAnimations().forEach(a => a.cancel());
+      el.animate([{ opacity: 0, transform: 'translateY(10px)' }, { opacity: 1, transform: 'none' }], { duration: rm ? 10 : 1200, delay: rm ? 0 : 2400 + i * 250, easing: 'ease-out', fill: 'both' });
+    });
+    this.timers.push(setTimeout(() => { this.phase = 1; this.setState({ phase: 1 }); this.onScroll(); }, rm ? 0 : 1400));
+  };
+
+  openAt(i, el) { this.origin = el && el.getBoundingClientRect ? el.getBoundingClientRect() : null; this.setState({ open: i }); document.body.style.overflow = 'hidden'; }
+  close = () => { this.setState({ open: -1 }); document.body.style.overflow = ''; };
+  step(dlt) { const n = this.projects.length; this.setState(s => ({ open: (s.open + dlt + n) % n })); }
+
+  animateOpen() {
+    const p = this.panelRef.current; if (!p || this.reduced) return;
+    const r = p.getBoundingClientRect(), o = this.origin;
+    if (o && o.width > 0) {
+      const sx = o.width / r.width, sy = o.height / r.height, tx = o.left - r.left, ty = o.top - r.top;
+      p.animate([{ transformOrigin: '0 0', transform: 'translate(' + tx + 'px,' + ty + 'px) scale(' + sx + ',' + sy + ')', opacity: 0.5 }, { transformOrigin: '0 0', transform: 'none', opacity: 1 }], { duration: 620, easing: 'cubic-bezier(.2,.8,.1,1)' });
+    } else {
+      p.animate([{ opacity: 0, transform: 'translateY(18px) scale(0.98)' }, { opacity: 1, transform: 'none' }], { duration: 420, easing: 'cubic-bezier(.2,.7,.1,1)' });
+    }
+    p.querySelectorAll('[data-pc]').forEach((el, k) => el.animate([{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'none' }], { duration: 480, delay: 260 + k * 90, easing: 'ease-out', fill: 'backwards' }));
+  }
+
+  onSend = (e) => {
+    e.preventDefault();
+    const st = this.state, msg = (st.idea || '').trim(), em = (st.femail || '').trim();
+    if (!msg || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { this.setState({ sendState: 'invalid' }); return; }
+    if (st.sendState === 'sending') return;
+    this.setState({ sendState: 'sending' });
+    fetch('https://formsubmit.co/ajax/gargitripathi19@gmail.com', {
+      method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ name: (st.fname || '').trim() || 'Not given', email: em, message: msg, _subject: 'A half-formed idea — via your portfolio', _replyto: em, _template: 'box', _captcha: 'false' })
+    }).then(r => r.json().catch(() => ({})).then(j => { if (!r.ok || j.success === 'false' || j.success === false) throw new Error('fail'); this.setState({ sendState: 'sent' }); }))
+      .catch(() => this.setState({ sendState: 'error' }));
+  };
+
+  copyEmail = () => {
+    const done = () => { this.setState({ copied: true }); clearTimeout(this.copyT); this.copyT = setTimeout(() => this.setState({ copied: false }), 1800); };
+    try { navigator.clipboard.writeText('gargitripathi19@gmail.com').then(done, done); } catch (err) { done(); }
+  };
+
+  cardClick = (e) => {
+    if (this.dragMoved) { this.dragMoved = false; return; }
+    this.openAt(+e.currentTarget.dataset.i, e.currentTarget);
+  };
+
+  renderVals() {
+    const st = this.state, o = st.open, cur = this.projects[o >= 0 ? o : 0];
+    const v = {};
+    for (let i = 0; i < 6; i++) v['v' + i + 'c'] = st.verb === i ? 'var(--s-acc, #FF9AA8)' : 'var(--s-mut, #E6CBC6)';
+    const ss = st.sendState;
+    const status = ss === 'error' ? 'Couldn’t send from here. Please use the email link below.' : (ss === 'invalid' ? 'Add a few words and your email first.' : '');
+    return {
+      rootRef: this.rootRef, wrapRef: this.wrapRef, heroRef: this.heroRef, canvasRef: this.canvasRef, cardsRef: this.cardsRef,
+      titleRef: this.titleRef, heroTextRef: this.heroTextRef, spaceRef: this.spaceRef, dotRef: this.dotRef, panelRef: this.panelRef,
+      replay: () => { window.scrollTo(0, 0); this.playIntro(); },
+      cardClick: this.cardClick,
+      cardEnter: (e) => { this.hoverI = +e.currentTarget.dataset.i; },
+      cardLeave: () => { this.hoverI = -1; },
+      idea: st.idea, onIdea: (e) => this.setState({ idea: e.target.value }), fname: st.fname, onName: (e) => this.setState({ fname: e.target.value }), femail: st.femail, onEmail: (e) => this.setState({ femail: e.target.value }),
+      onSend: this.onSend, sent: ss === 'sent', notSent: ss !== 'sent', sendLabel: ss === 'sending' ? 'SENDING…' : 'SEND IT →', status,
+      resetForm: () => this.setState({ sendState: 'idle', idea: '' }),
+      copyEmail: this.copyEmail, copyLabel: st.copied ? 'COPIED ✓' : 'COPY',
+      isOpen: o >= 0,
+      cur: { ...cur, hasImages: !!cur.images, hasEmbed: !cur.images, images: (cur.images || []).map(x => ({ src: x[0], alt: x[1] })), plabel: cur.images ? 'GALLERY — ' + cur.host : 'LIVE PREVIEW — ' + cur.host, olabel: cur.images ? 'OPEN ↗' : 'NOT LOADING? OPEN ↗', idx: cur.n + ' / 0' + this.projects.length, process: cur.process.map((p, k) => ({ n: '0' + (k + 1), t: p[0], d: p[1] })) },
+      close: this.close, next: () => this.step(1), prev: () => this.step(-1),
+      time: st.time,
+      ...v
+    };
+  }
+}
+</script>
+</body>
+</html>
